@@ -93,7 +93,7 @@ public class TxHandler {
         return (Transaction[])transactions.toArray();
     }
 
-    public UTXOPool getUTXOPOOL() {
-        return null;
+    public UTXOPool getUTXOPool() {
+        return utxoPool;
     }
 }
