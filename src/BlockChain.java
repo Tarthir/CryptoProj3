@@ -4,7 +4,8 @@
 
 public class BlockChain {
     public static final int CUT_OFF_AGE = 10;
-    public TransactionPool TxPool = null;
+    TransactionPool TxPool = null;
+    UTXOPool UPool = null;
 
     /**
      * create an empty block chain with just a genesis block. Assume {@code genesisBlock} is a valid
@@ -13,6 +14,7 @@ public class BlockChain {
     public BlockChain(Block genesisBlock) {
         // IMPLEMENT THIS
         this.TxPool = new TransactionPool();
+        this.UPool = new UTXOPool();
     }
 
     /** Get the maximum height block */
@@ -22,7 +24,7 @@ public class BlockChain {
 
     /** Get the UTXOPool for mining a new block on top of max height block */
     public UTXOPool getMaxHeightUTXOPool() {
-        // IMPLEMENT THIS
+        return UPool;
     }
 
     /** Get the transaction pool to mine a new block */
